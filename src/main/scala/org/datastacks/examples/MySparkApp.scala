@@ -46,9 +46,9 @@ object MySparkApp {
      val englishtweets = tweets.filter(_.getLang() == "en") 
      englishtweets.print()
     // englishtweets.saveAsTextFiles("output", "json")
-    /* englishtweets.foreachRDD{(rdd, time) =>
-       rdd.saveAsTextFile("output")
-     }*/
+    // englishtweets.foreachRDD{(rdd, time) =>
+     //  rdd.saveAsTextFile("output")
+    // }*/
        englishtweets.foreachRDD{(rdd, time) =>
        rdd.map(t => {
           Map(
