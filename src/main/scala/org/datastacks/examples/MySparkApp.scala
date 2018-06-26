@@ -51,7 +51,7 @@ object MySparkApp {
      }*/
        englishtweets.foreachRDD{(rdd, time) =>
        rdd.map(t => {
-          (
+          Map(
            "user"-> t.getUser.getScreenName,
            "created_at" -> t.getCreatedAt.getTime.toString,
            "location" -> Option(t.getGeoLocation).map(geo => { s"${geo.getLatitude},${geo.getLongitude}" }),
